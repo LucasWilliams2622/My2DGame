@@ -27,7 +27,7 @@ public class ThomCollect : MonoBehaviour
            /* collision.transform.localScale = new Vector3(0.75f, 0.75f, 0);
             collision.transform.localScale = new Vector3(0.50f, 0.50f, 0);
             collision.transform.localScale = new Vector3(0.25f, 0.25f, 0);*/
-            collision.transform.localScale = new Vector3(2f, 2f, 0);
+            collision.transform.localScale = new Vector3(1.5f, 1.5f, 0);
 
             transform.localScale = new Vector3(0.2f,0.2f, 0);
 

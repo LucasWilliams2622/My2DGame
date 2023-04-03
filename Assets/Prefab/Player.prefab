@@ -14853,13 +14853,11 @@ GameObject:
   - component: {fileID: 249283738677534668}
   - component: {fileID: 249283738677534669}
   - component: {fileID: 249283738677534674}
-  - component: {fileID: 249283738677534675}
   - component: {fileID: 249283738677534672}
   - component: {fileID: 249283738677534673}
   - component: {fileID: 249283738677534678}
   - component: {fileID: 249283738677534679}
   - component: {fileID: 249283738677534676}
-  - component: {fileID: 249283738677534677}
   m_Layer: 8
   m_Name: Player
   m_TagString: Player
@@ -14996,7 +14994,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isRight: 1
-  boxPresent: {fileID: 7636546348539240136, guid: 34ce7ec3d4ad0c947aee030392f5d02b, type: 3}
   panal: {fileID: 0}
   text: {fileID: 0}
   button: {fileID: 0}
@@ -15006,6 +15003,7 @@ MonoBehaviour:
     m_Bits: 192
   moveSpeed: 9
   jumpForce: 10
+  playerDeath: {fileID: 0}
   jumpSoundEffet: {fileID: 249283738677534672}
 --- !u!95 &249283738677534668
 Animator:
@@ -15054,21 +15052,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cherriesText: {fileID: 0}
   collectItemSound: {fileID: 249283738677534673}
---- !u!114 &249283738677534675
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 249283738677534683}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 27c851df27891124784d93c7961aad12, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  damage: 1
-  startPos: {x: -5, y: 4}
-  playerDeath: {fileID: 249283738677534678}
 --- !u!82 &249283738677534672
 AudioSource:
   m_ObjectHideFlags: 0
@@ -15467,19 +15450,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Gun: {fileID: 249283738083368535}
   Bullet: {fileID: 7020584688157068953, guid: d1d6edf902d5ea84ea2ff3856ff4bd58, type: 3}
+  MountOfBullet: 0
   BulletSpeed: 9999
   ShootPoint: {fileID: 249283738375352952}
+  BulletLeftText: {fileID: 0}
   sniperSound: {fileID: 249283738677534679}
---- !u!114 &249283738677534677
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 249283738677534683}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe0270dae8e52934ca46be7b21156197, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  startingHealth: 3
+  chargingSound: {fileID: 0}
+  outOfBulletSound: {fileID: 0}

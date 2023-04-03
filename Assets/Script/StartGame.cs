@@ -12,8 +12,5 @@ public class StartGame : MonoBehaviour
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex+1);
     }
-    public void Awak11e()
-    {
-        Debug.Log("Null Object");
-    }
+
 }

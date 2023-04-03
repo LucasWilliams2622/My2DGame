@@ -14,19 +14,16 @@ public class PlayerLife : MonoBehaviour
     // Start is called before the first frame update
     [SerializeField] private AudioSource playerDeath;
 
-    public static Vector2 lastCheckPoint = new Vector2(14,0);
+    // public static Vector2 lastCheckPoint = new Vector2(14,0);
+    private Vector2 lastCheckpointPos;
 
-    
+
     void Start()
     {
         anim = GetComponent<Animator>();
         rb = GetComponent<Rigidbody2D>();
 
-
-    }
-    private void Awake()
-    {
-        GameObject.FindGameObjectWithTag("Player").transform.position = lastCheckPoint;
+       
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
@@ -35,15 +32,26 @@ public class PlayerLife : MonoBehaviour
             Die();
         }
     }
-    private void OnTriggerEnter2D(Collider2D collision)
+    private void OnTriggerEnter2D(Collider2D other)
     {
-        if (collision.tag == "Trap")
+   /*     if (other.tag == "Trap")
         {
             Die();
 
-            /* Debug.Log("dame");
-             collision.GetComponent<Health>().TakeDamage(damage);*/
+            *//* Debug.Log("dame");
+             collision.GetComponent<Health>().TakeDamage(damage);*//*
         }
+        if (collision.gameObject.tag == "Trap")
+        {
+            Time.timeScale = 0;
+            panal.SetActive(true);
+            text.SetActive(true);
+            button.SetActive(true);
+            jumpSoundEffet.Stop();
+            //   Destroy(gameObject);
+
+        }*/
+
     }
     private void Die()
     {

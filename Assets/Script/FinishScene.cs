@@ -25,7 +25,7 @@ public class FinishScene : MonoBehaviour
             Debug.Log("Complete");
             finishScene.Play();
             anim.SetTrigger("FinishLv1");   
-            Invoke("CompleteLevel1", 6f);
+            Invoke("CompleteLevel1", 5f);
            // CompleteLevel1();
 
 

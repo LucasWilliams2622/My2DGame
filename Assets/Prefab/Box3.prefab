@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 967545631234419955}
   - component: {fileID: 4946942836779741369}
   - component: {fileID: 5302165077653399947}
-  - component: {fileID: 5302165077653399944}
   m_Layer: 7
   m_Name: Box3
   m_TagString: Stuff
@@ -134,21 +133,3 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!255 &5302165077653399944
-FixedJoint2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5302165077653399956}
-  m_Enabled: 0
-  serializedVersion: 4
-  m_EnableCollision: 0
-  m_ConnectedRigidBody: {fileID: 0}
-  m_BreakForce: Infinity
-  m_BreakTorque: Infinity
-  m_AutoConfigureConnectedAnchor: 1
-  m_Anchor: {x: 0, y: 0}
-  m_ConnectedAnchor: {x: 62.57, y: -1.19}
-  m_DampingRatio: 0
-  m_Frequency: 0
