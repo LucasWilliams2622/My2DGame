@@ -6,16 +6,10 @@ using Dan.Main;
 public class LeaderBoard : MonoBehaviour
 {
 
-
-
-
-
-
-
-    /*[SerializeField] private List<TextMeshProUGUI> names;
+    [SerializeField] private List<TextMeshProUGUI> names;
     [SerializeField] private List<TextMeshProUGUI> scores;
 
-    private string publicLeaderboardKey = "64b1d35b643a51699e5caf0fa838e921190e55d624ca92a962d09d576cc55be0";
+    private string publicLeaderboardKey = "0ab7effed0a2a9f9378f8f64c0dd3adf0d6bc73a40c910cfedd0619e8f667a36";
 
     private void Start()
     {
@@ -41,5 +35,5 @@ public class LeaderBoard : MonoBehaviour
             // username.Substring(0, 4);
             getLeaderBoard();
         }));
-    }*/
+    }
 }

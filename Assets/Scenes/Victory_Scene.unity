@@ -2829,6 +2829,28 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: efe277bbe1d977947a076bfe239556de, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  names:
+  - {fileID: 2023622236}
+  - {fileID: 1190617952}
+  - {fileID: 1970974726}
+  - {fileID: 899239406}
+  - {fileID: 1065368290}
+  - {fileID: 623039384}
+  - {fileID: 1520648197}
+  - {fileID: 1993317281}
+  - {fileID: 970222985}
+  - {fileID: 621502121}
+  scores:
+  - {fileID: 733777177}
+  - {fileID: 983882999}
+  - {fileID: 318598200}
+  - {fileID: 1491466250}
+  - {fileID: 28444539}
+  - {fileID: 1965796177}
+  - {fileID: 58275185}
+  - {fileID: 1124286904}
+  - {fileID: 1771286494}
+  - {fileID: 1857229559}
 --- !u!4 &1178932494
 Transform:
   m_ObjectHideFlags: 0
@@ -3037,9 +3059,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: '1111
-
-'
+  m_text: 2222
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -3305,6 +3325,7 @@ GameObject:
   - component: {fileID: 1390207582}
   - component: {fileID: 1390207581}
   - component: {fileID: 1390207580}
+  - component: {fileID: 1390207583}
   m_Layer: 0
   m_Name: Button
   m_TagString: Untagged
@@ -3377,9 +3398,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1498493099}
-        m_TargetAssemblyTypeName: SaveData, Assembly-CSharp
-        m_MethodName: SendScore
+      - m_Target: {fileID: 1390207583}
+        m_TargetAssemblyTypeName: ScoresManager, Assembly-CSharp
+        m_MethodName: SubmitScore
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -3427,6 +3448,35 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1390207578}
   m_CullTransparentMesh: 1
+--- !u!114 &1390207583
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1390207578}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 760a8ee2b9ad12442969a5a4741d9b94, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  inputScore: {fileID: 1315252430}
+  inputName: {fileID: 768458497}
+  submitScoreEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1178932493}
+        m_TargetAssemblyTypeName: LeaderBoard, Assembly-CSharp
+        m_MethodName: setLeaderBoard
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &1459502967
 GameObject:
   m_ObjectHideFlags: 0
@@ -3694,9 +3744,6 @@ GameObject:
   - component: {fileID: 1498493097}
   - component: {fileID: 1498493096}
   - component: {fileID: 1498493095}
-  - component: {fileID: 1498493101}
-  - component: {fileID: 1498493100}
-  - component: {fileID: 1498493099}
   m_Layer: 0
   m_Name: CanvasBroadScore
   m_TagString: Untagged
@@ -3790,67 +3837,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
---- !u!114 &1498493099
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1498493094}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: eaa9e0f8190f4bd4990f44dbfd9d6bb3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  myName: {fileID: 768458497}
-  myScore: {fileID: 1315252430}
-  currentScore: 400
---- !u!114 &1498493100
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1498493094}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c71ab38a104c9784799d5d19310ffd8c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  rNames:
-  - {fileID: 2023622236}
-  - {fileID: 1190617952}
-  - {fileID: 1970974726}
-  - {fileID: 899239406}
-  - {fileID: 1065368290}
-  - {fileID: 623039384}
-  - {fileID: 1520648197}
-  - {fileID: 1993317281}
-  - {fileID: 970222985}
-  - {fileID: 621502121}
-  rScores:
-  - {fileID: 733777177}
-  - {fileID: 983882999}
-  - {fileID: 318598200}
-  - {fileID: 1491466250}
-  - {fileID: 28444539}
-  - {fileID: 1965796177}
-  - {fileID: 58275185}
-  - {fileID: 1124286904}
-  - {fileID: 1771286494}
-  - {fileID: 1857229559}
---- !u!114 &1498493101
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1498493094}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 718f161b22704dc429a37e8163c0fb43, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1520648195
 GameObject:
   m_ObjectHideFlags: 0

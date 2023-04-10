@@ -10,7 +10,7 @@ public class ScoresManager : MonoBehaviour
     public UnityEvent<string, int> submitScoreEvent;
     public void SubmitScore()
     {
-        submitScoreEvent.Invoke(inputName.text, int.Parse(inputScore.text));
+        submitScoreEvent.Invoke(inputName.text, int.Parse(inputScore.text));    
         // Update is called once per frame
      
     }

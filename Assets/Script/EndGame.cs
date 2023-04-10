@@ -7,7 +7,11 @@ public class EndGame : MonoBehaviour
 {
     // Start is called before the first frame update
     [SerializeField] private AudioSource finishScene;
-
+    private void Start()
+    {
+        ItemCollector itemCollector = GetComponent<ItemCollector>();
+        
+    }
     void Update()
     {
         finishScene = GetComponent<AudioSource>();

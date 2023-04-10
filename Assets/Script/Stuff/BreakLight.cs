@@ -25,14 +25,11 @@ public class BreakLight : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Hurt"))
         {
-            Debug.Log("Break");
-
             breakLightSound.Play();
             Destroy(LightObj);
         }
         if (collision.gameObject.tag == "Player")
-        {
-            Debug.Log("Player");
+        {         
             breakLightSound.Play();
             Destroy(LightObj);
         }

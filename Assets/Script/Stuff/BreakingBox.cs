@@ -24,7 +24,7 @@ public class BreakingBox : MonoBehaviour
         if (collision.gameObject.tag == "Hurt")
         {
             timesGotShoot++;
-            Debug.Log(timesGotShoot + "times");
+           // Debug.Log(timesGotShoot + "times");
             if (timesGotShoot == NumOfEndurance)
             {
                 Debug.Log("Destroy");

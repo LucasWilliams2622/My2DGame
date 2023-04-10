@@ -41,10 +41,17 @@ public class EnemyFollow : MonoBehaviour
             anim.SetTrigger("EnemyHurt");
             if (stack == diePoint)
             {
+                Debug.Log("K DAU");
+                //ItemCollector itemCollector = new ItemCollector();
+                var player = GameObject.FindGameObjectsWithTag("Player");
+                ItemCollector itemCollector = player[0].gameObject.GetComponent<ItemCollector>();
+                itemCollector.onIncrementScore(5);
+                itemCollector.UpdateScoreText();
+
+
                 Destroy(gameObject);
-                //scoreManager.IncrementPoint();
-                /*Invoke("CompleteLevel1", 3f);*/
-                Die();  
+
+                //Die();  
             }
             else
             {
@@ -54,12 +61,8 @@ public class EnemyFollow : MonoBehaviour
     }
     private void Die()
     {
-        // playerDeath.Play();
-        ItemCollector itemCollector = GetComponent<ItemCollector>();
-        itemCollector.scores = itemCollector.scores+5;
-        Debug.Log("itemCollector" + itemCollector.scores);
-        itemCollector.scoreText.text = " " + itemCollector.scores;
-        Debug.Log("Enemy dead");
+        
+       
 
     }
     // Update is called once per frame

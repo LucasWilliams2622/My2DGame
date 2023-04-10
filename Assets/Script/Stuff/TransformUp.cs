@@ -22,7 +22,7 @@ public class TransformUp : MonoBehaviour
     {
         if (collision.gameObject.tag == "Player")
         {
-            Debug.Log("aaaaaaaaa");
+       
             collision.GetComponent<Rigidbody2D>().velocity = new Vector2(0, thrownSpace);
         }
     }
