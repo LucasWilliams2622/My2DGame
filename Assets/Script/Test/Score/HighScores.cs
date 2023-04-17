@@ -7,10 +7,8 @@ public class HighScores : MonoBehaviour
     const string privateCode = "ltR_inMAzUebewboUZkMYw_n8I35xEC0C3QBRIuqZneQ";  //Key to Upload New Info
     const string publicCode = "6428f2728f40bb109c01ae3b";   //Key to download
     const string webURL = "http://dreamlo.com/lb/"; //  Website the keys are for
-
     public PlayerScore[] scoreList;
     DisplayHighscores myDisplay;
-
     static HighScores instance; //Required for STATIC usability
     void Awake()
     {

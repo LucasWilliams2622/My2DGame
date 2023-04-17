@@ -9,7 +9,6 @@ public class PlayerMovement : MonoBehaviour
     private Animator anim;
     private SpriteRenderer sprite;
     private BoxCollider2D coll;
-
     public bool isRight = true;
  
     public float thrownSpace;
@@ -17,16 +16,13 @@ public class PlayerMovement : MonoBehaviour
     private float dirX;// = 0f just in case
     [SerializeField] private float moveSpeed = 7f;//if some variable use many times u should use it like a global variable 
     [SerializeField] private float jumpForce = 10f;//SerializeField for set value on Editor 
-
     // use enum to assign the names or string values to integral constants, that make a program easy to read and maintain.
     private enum MovementState { idle, running, jumping, falling }//0 idle | 1 running | 2 jumping | 3 falling
-
     [SerializeField] private AudioSource playerDeath;
     [SerializeField] private AudioSource jumpSoundEffet;
-
     private Vector2 lastCheckpointPos;
     public static Vector3 lastPlayerPos;
-    // Start is called before the first frame update
+ 
     void Start()
     {
         rigidbody2 = GetComponent<Rigidbody2D>();
@@ -41,8 +37,7 @@ public class PlayerMovement : MonoBehaviour
     }
 
     void Update()
-    {
-        // directionX = dirX
+    {  
         rigidbody2.velocity = new Vector2(dirX * moveSpeed, rigidbody2.velocity.y);
         dirX = Input.GetAxisRaw("Horizontal");//GetAxisRaw make movemoment more smooth
 
@@ -95,8 +90,6 @@ public class PlayerMovement : MonoBehaviour
         {
             Destroy(collision.gameObject);
             PlayerShooting shootingScript = GetComponent<PlayerShooting>();
-
-            //Debug.Log("MountOfBullet :" + shootingScript.MountOfBullet );
             shootingScript.MountOfBullet = shootingScript.MountOfBullet + 10;
             shootingScript.BulletLeftText.text = " " + shootingScript.MountOfBullet;
 

@@ -7,6 +7,7 @@ public class PlayerManager : MonoBehaviour
 {
     public GameObject panal;
     public static bool isGameOver;
+    public GameObject panalLeaderBoard;
     void Start()
     {
         isGameOver = false;
@@ -42,5 +43,9 @@ public class PlayerManager : MonoBehaviour
         Time.timeScale = 1f;
 
         SceneManager.LoadScene("Start_Scene");
+    }
+    public void OpenLeaderBoard()
+    {
+        panalLeaderBoard.SetActive(true);
     }
 }

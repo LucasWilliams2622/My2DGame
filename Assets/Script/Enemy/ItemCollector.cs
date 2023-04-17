@@ -32,6 +32,8 @@ public class ItemCollector : MonoBehaviour
     public void onIncrementScore(int scorePlus)
     {
         scores = scores + scorePlus;
+        PlayerPrefs.SetInt("score", scores);
+        PlayerPrefs.Save();
         Debug.Log(scores);
 
         UpdateScoreText();

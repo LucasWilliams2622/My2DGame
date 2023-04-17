@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class EnemyFollow : MonoBehaviour
 {
@@ -28,7 +29,6 @@ public class EnemyFollow : MonoBehaviour
         if (collision.gameObject.tag == "TrampolineTop")
         {
             GetComponent<Rigidbody2D>().velocity = new Vector2(0, thrownSpace);
-
         }
     }
 
@@ -38,20 +38,30 @@ public class EnemyFollow : MonoBehaviour
         {
             hitSound.Play();
             stack++;
-            anim.SetTrigger("EnemyHurt");
+            //anim.SetTrigger("EnemyHurt");
             if (stack == diePoint)
             {
-                Debug.Log("K DAU");
-                //ItemCollector itemCollector = new ItemCollector();
-                var player = GameObject.FindGameObjectsWithTag("Player");
-                ItemCollector itemCollector = player[0].gameObject.GetComponent<ItemCollector>();
-                itemCollector.onIncrementScore(5);
-                itemCollector.UpdateScoreText();
+             
+                if (gameObject.tag == "Boss")
+                {
+                    var player = GameObject.FindGameObjectsWithTag("Player");
+                    ItemCollector itemCollector = player[0].gameObject.GetComponent<ItemCollector>();
+                    itemCollector.onIncrementScore(10);
+                    itemCollector.UpdateScoreText();
+                    Destroy(gameObject);
+                 
+                
 
+                }
+                else
+                {
+                    var player = GameObject.FindGameObjectsWithTag("Player");
+                    ItemCollector itemCollector = player[0].gameObject.GetComponent<ItemCollector>();
+                    itemCollector.onIncrementScore(5);
+                    itemCollector.UpdateScoreText();
+                    Destroy(gameObject);
 
-                Destroy(gameObject);
-
-                //Die();  
+                }
             }
             else
             {
@@ -59,30 +69,22 @@ public class EnemyFollow : MonoBehaviour
             }
         }
     }
-    private void Die()
-    {
-        
-       
 
-    }
-    // Update is called once per frame
     void Update()
     {
         distance = Vector2.Distance(transform.position, player.transform.position);
         Vector2 direction = player.transform.position - transform.position;
         transform.position = Vector2.MoveTowards(this.transform.position, player.transform.position, speed * Time.deltaTime);
 
-
         if (player.transform.position.x > 0f)
         {
             sprite.flipX = true;
-
         }
         else if (player.transform.position.x < 0f)
         {
-
             sprite.flipX = false;
         }
     }
+ 
 
 }

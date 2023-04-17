@@ -16,6 +16,7 @@ TagManager:
   - Checkpoint
   - BoxWeapon
   - AmmunitionBox
+  - Boss
   layers:
   - Default
   - TransparentFX

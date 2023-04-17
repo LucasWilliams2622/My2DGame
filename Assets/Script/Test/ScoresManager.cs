@@ -14,4 +14,13 @@ public class ScoresManager : MonoBehaviour
         // Update is called once per frame
      
     }
+
+    private void Update()
+    {
+       
+        if(inputScore.text != PlayerPrefs.GetInt("score").ToString())
+        {
+            inputScore.text = PlayerPrefs.GetInt("score").ToString();
+        }
+    }
 }

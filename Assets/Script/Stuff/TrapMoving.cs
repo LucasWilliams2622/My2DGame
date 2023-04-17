@@ -13,18 +13,16 @@ public class TrapMoving : MonoBehaviour
     private bool elevatorUp = false;
     private int keyupCooldown = 0;
     private int tick = 0;
-    // Start is called before the first frame update
+
     void Start()
     {
         nextPos = startPos.position;
-
     }
 
-    // Update is called once per frame
+    
     private void Update()
     {
-        tick++;
-        //Debug.Log("playerInTrigger"+ playerInTrigger);
+        tick++;     
         if (playerInTrigger && Input.GetKey(KeyCode.E) && keyupCooldown < tick)
         {
             keyupCooldown = tick + 64;
@@ -33,11 +31,11 @@ public class TrapMoving : MonoBehaviour
             if(elevatorUp)
             {
                 Debug.Log("goPos1" + tick);
-                goPos1();
+              
             } else
             {
                 Debug.Log("goPos2" + tick);
-                goPos2();
+              
             }
         }
 
@@ -72,14 +70,6 @@ public class TrapMoving : MonoBehaviour
             Debug.Log("OUT");
             playerInTrigger = false; // Gán biến playerInTrigger = false khi player rời khỏi trigger
         }
-    }
-    private void goPos1()
-    {
-        
-    }
-    private void goPos2()
-    {
-       
     }
     private void OnDrawGizmos()
     {
