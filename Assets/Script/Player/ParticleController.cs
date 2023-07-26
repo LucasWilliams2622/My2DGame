@@ -30,9 +30,6 @@ public class ParticleController : MonoBehaviour
             {
                 movementParticle.Play(); counter = 0;
             }
-         
-
-
         }
         
     }

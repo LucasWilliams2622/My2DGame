@@ -10,7 +10,7 @@ public class PlayerMovement : MonoBehaviour
     private SpriteRenderer sprite;
     private BoxCollider2D coll;
     public bool isRight = true;
- 
+
     public float thrownSpace;
     [SerializeField] private LayerMask jumableGround;
     private float dirX;// = 0f just in case
@@ -22,9 +22,13 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private AudioSource jumpSoundEffet;
     private Vector2 lastCheckpointPos;
     public static Vector3 lastPlayerPos;
- 
+
+    public GameObject frogDead,playerDead;
+    public GameObject panelDead;
+
     void Start()
     {
+        
         rigidbody2 = GetComponent<Rigidbody2D>();
         coll = GetComponent<BoxCollider2D>();
         anim = GetComponent<Animator>();//get all component of Animator
@@ -37,7 +41,7 @@ public class PlayerMovement : MonoBehaviour
     }
 
     void Update()
-    {  
+    {
         rigidbody2.velocity = new Vector2(dirX * moveSpeed, rigidbody2.velocity.y);
         dirX = Input.GetAxisRaw("Horizontal");//GetAxisRaw make movemoment more smooth
 
@@ -84,9 +88,9 @@ public class PlayerMovement : MonoBehaviour
 
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)  
+    private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.tag== "AmmunitionBox")
+        if (collision.gameObject.tag == "AmmunitionBox")
         {
             Destroy(collision.gameObject);
             PlayerShooting shootingScript = GetComponent<PlayerShooting>();
@@ -94,18 +98,37 @@ public class PlayerMovement : MonoBehaviour
             shootingScript.BulletLeftText.text = " " + shootingScript.MountOfBullet;
 
         }
+       
+        if (collision.gameObject.CompareTag("TouchLeft"))
+        {
+            Destroy(gameObject);
+            Instantiate(playerDead,
+            collision.gameObject.transform.position,
+            collision.gameObject.transform.localRotation);
+            panelDead.SetActive(true);
+        }
 
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
-      
-      /*  if (collision.gameObject.tag == "TouchTop")
+
+        /*  if (collision.gameObject.tag == "TouchTop")
+          {
+              var name = collision.attachedRigidbody.name;
+              Destroy(GameObject.Find(name));
+          }*/
+
+        if (collision.gameObject.CompareTag("TouchTop"))
         {
+            //frogDead.Play();
             var name = collision.attachedRigidbody.name;
             Destroy(GameObject.Find(name));
-        }*/
+            Instantiate(frogDead,
+             collision.gameObject.transform.position,
+             collision.gameObject.transform.localRotation);
+        }
     }
-    
+
     public void ReloadScreeen()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
